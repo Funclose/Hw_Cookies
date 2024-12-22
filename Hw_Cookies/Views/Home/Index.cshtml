@@ -1,0 +1,13 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+	SelectList colors = new SelectList(new string[] { "Orange", "White", "Black", "Blue", "Brown" }, "White");
+}
+
+<div class="text-center">
+	<h3 class="display-10">Theme Settings</h3>
+	<form asp-action="SetStyle" method="post">
+		<label for="selectedColor">Select a color</label>
+		@Html.DropDownList("selectedColor", colors, new {@class = "form-control"})
+		<button type="submit" class="btn btn-primary mt-3">Submit</button>
+	</form>
+</div>
